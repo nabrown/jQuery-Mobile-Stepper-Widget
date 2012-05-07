@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Testing Stepper widget</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script src="jquery.mobile.stepper.js"></script>
+
+<style type="text/css">
+body{
+	font-family:"HelveticaNeue-Light", "Helvetica Neue","Arial",sans-serif;
+	font-weight:200;
+	font-size:16px;
+}
+</style>
+</head>
+
+<body>
+<h1>jQuery Mobile Stepper plugin for incrementing and decrementing</h1>
+<div data-role="stepper" data-theme="d"><input type="text" name="stepper1" id="stepper1" class="quantity" value="1" min="1" max="20" size="2" data-role="none" /></div>
+<div data-role="stepper" data-theme="d"><input type="text" name="stepper2" id="stepper2" class="quantity" value="0" min="0" max="10" size="2" data-role="none" /></div>
+</body>
+</html>

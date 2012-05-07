@@ -7,21 +7,24 @@
 			direction: "horizontal",
 			shadow: false,
 			excludeInvisible: true,
-			step: 1
+			step: 1,
+			theme: "a"
 		},
 		_create: function(){
 			var $el = this.element,
-				o = this.options,
-				theme = $el.jqmData("theme"),
+				o = $.extend(this.options, $el.data("options")),
 			 	$input = $el.find('input'),
 				$incBtn = $('<a class="inc" data-role="button">+</a>'),
 				$decBtn = $('<a class="dec" data-role="button">-</a>'),
+				// Get min and max from input's attributes
 				min = parseInt($input.attr('min')),
 				max = parseInt($input.attr('max')),
 				flCorners = o.direction == "horizontal" ? [ "ui-corner-left", "ui-corner-right" ] : [ "ui-corner-top", "ui-corner-bottom" ];
-					
+			
+			// Insert button markup
 			$input.before($decBtn).after($incBtn);
-				
+			
+			// Bind increment and decrement functions to click event
 			$el.find('.inc, .dec').click(function(){
 				$input.trigger('change');
 				var $btn = $(this),
@@ -33,7 +36,7 @@
 					var newVal = oldVal == min ? min : oldVal - parseInt(o.step);
 				}
 				$input.val(newVal);
-			}).buttonMarkup({theme: theme});
+			}).buttonMarkup({theme: o.theme}); // Enhance button markup
 
 			$el.addClass( "ui-controlgroup ui-controlgroup-" + o.direction );
 				
@@ -58,5 +61,6 @@
 		$( ":jqmData(role='stepper')", e.target ).stepper({ excludeInvisible: false });
 	});
 	
+
 })(jQuery);
 
