@@ -22,7 +22,11 @@
 				flCorners = o.direction == "horizontal" ? [ "ui-corner-left", "ui-corner-right" ] : [ "ui-corner-top", "ui-corner-bottom" ];
 			
 			// Insert button markup
-			$input.before($decBtn).after($incBtn);
+			if(o.direction == "horizontal"){
+				$input.before($decBtn).after($incBtn);
+			}else{
+				$input.before($incBtn).after($decBtn).wrap('<div class="step-input-wrap" />');
+			}
 			
 			// Bind increment and decrement functions to click event
 			$el.find('.inc, .dec').click(function(){
