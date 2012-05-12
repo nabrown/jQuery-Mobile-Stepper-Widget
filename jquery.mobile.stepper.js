@@ -1,5 +1,9 @@
 /* 
-* "stepper" plugin: add incrementer decrementer buttons to quantity input, looks for container w/ looks for data-role="stepper"
+ * jQuery Mobile Framework : "stepper" plugin: add incrementer decrementer buttons to quantity input
+ * Copyright (c) Nora Brown
+ * CC 3.0 Attribution.  May be relicensed without permission/notifcation.
+ * https://github.com/nabrown/jQuery-Mobile-Stepper-Widget
+ * Looks for container w/ data-role="stepper"
 */	
 (function ($, undefined){
 	$.widget("mobile.stepper", $.mobile.widget, {
